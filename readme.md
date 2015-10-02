@@ -1,0 +1,1 @@
+##Example of Kbwebs multiauth
