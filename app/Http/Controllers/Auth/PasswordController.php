@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ResetsPasswords;
+use Kbwebs\MultiAuth\Foundation\UserResetsPasswords;
 
 class PasswordController extends Controller
 {
@@ -18,7 +18,7 @@ class PasswordController extends Controller
     |
     */
 
-    use ResetsPasswords;
+    use UserResetsPasswords;
 
     /**
      * Create a new password controller instance.

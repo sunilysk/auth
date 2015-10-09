@@ -65,7 +65,11 @@ return [
     'user' => [
         'driver' => 'eloquent',
         'model'  => App\User::class
-    ]
+    ],
+     'other'=>[
+         'driver' => 'eloquent',
+         'model'  => App\Other::class
+     ]
     ],
 
     'password' => [

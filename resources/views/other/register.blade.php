@@ -8,7 +8,7 @@
 </head>
 <body>
 		<div class="container">
-		<form method="POST" action="{{url('auth/register')}}" >
+		<form method="POST" action="{{url('other/register')}}" >
     {!! csrf_field() !!}
 
     <div>

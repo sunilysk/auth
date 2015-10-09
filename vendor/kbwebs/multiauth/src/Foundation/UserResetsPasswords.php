@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Auth;
+namespace Kbwebs\MultiAuth\Foundation;
 
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-trait ResetsPasswords
+trait UserResetsPasswords
 {
     /**
      * Display the form to request a password reset link.
@@ -65,7 +65,9 @@ trait ResetsPasswords
             throw new NotFoundHttpException;
         }
 
-        return view('auth.reset')->with(['token'=> $token,'type'=>'user']);
+        $type = 'user';
+
+        return view('auth.reset')->with('token', $token);
     }
 
     /**
@@ -96,8 +98,8 @@ trait ResetsPasswords
 
             default:
                 return redirect()->back()
-                            ->withInput($request->only('email'))
-                            ->withErrors(['email' => trans($response)]);
+                    ->withInput($request->only('email'))
+                    ->withErrors(['email' => trans($response)]);
         }
     }
 

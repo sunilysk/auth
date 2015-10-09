@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class AdminRedirectIfAuthenticated
 {
     /**
      * The Guard implementation.
@@ -35,16 +35,16 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::admin()->check()){
-             return back();
+        if(Auth::user()->check()){
+            return back();
         }
 
         if(Auth::other()->check()){
             return back();
         }
 
-        if (Auth::user()->check()) {
-            return redirect('/');
+        if (Auth::admin()->check()) {
+            return redirect('dashboard');
         }
 
         return $next($request);

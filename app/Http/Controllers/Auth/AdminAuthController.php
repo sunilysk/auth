@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Admin;
 use Validator;
 use App\Http\Controllers\Controller;
-use Kbwebs\MultiAuth\Foundation\ThrottlesLogins;
-use Kbwebs\MultiAuth\Foundation\AuthenticatesAndRegistersUsers;
+use Kbwebs\MultiAuth\Foundation\AdminThrottlesLogins;
+use Kbwebs\MultiAuth\Foundation\AdminAuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
+class AdminAuthController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AdminAuthenticatesAndRegistersUsers, AdminThrottlesLogins;
 
     /**
      * Create a new authentication controller instance.
@@ -56,7 +56,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
