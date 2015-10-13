@@ -1,0 +1,1 @@
+Click here to reset your password: {{ URL::to('admin/password/reset', array($type, $token)) }}

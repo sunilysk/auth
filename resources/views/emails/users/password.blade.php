@@ -1,1 +1,1 @@
-Click here to reset your password: {{ URL::to('password/reset', array($type, $token)) }}
+Click here to reset your password: {{ URL::to('auth/password/reset', array($type, $token)) }}

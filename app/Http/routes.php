@@ -45,6 +45,15 @@ Route::get('auth/logout',['middleware'=>'ulogout','uses'=>  'Auth\AuthController
 Route::get('auth/register', ['middleware'=>'guest','uses'=> 'Auth\AuthController@getRegister']);
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// User Password reset link request routes...
+Route::get('auth/password/email', 'Auth\PasswordController@getEmail');
+Route::post('auth/password/email', 'Auth\PasswordController@postEmail');
+
+// User Password reset routes...
+Route::get('auth/password/reset/{type}/{token}', 'Auth\PasswordController@getReset');
+Route::post('auth/password/reset', 'Auth\PasswordController@postReset');
+
+
 //Admin Authentication routes....
 Route::get('admin/login',['middleware'=>'adminguest','uses'=>  'Auth\AdminAuthController@getLogin']);
 Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
@@ -53,6 +62,15 @@ Route::get('admin/logout',['middleware'=>'alogout','uses'=>  'Auth\AdminAuthCont
 //Admin Registration routes...
 Route::get('admin/register',['middleware'=>'adminguest','uses'=>  'Auth\AdminAuthController@getRegister']);
 Route::post('admin/register', 'Auth\AdminAuthController@postRegister');
+
+// Admin Password reset link request routes...
+Route::get('admin/password/email', 'Auth\AdminPasswordController@getEmail');
+Route::post('admin/password/email', 'Auth\AdminPasswordController@postEmail');
+
+// Admin Password reset routes...
+Route::get('admin/password/reset/{type}/{token}', 'Auth\AdminPasswordController@getReset');
+Route::post('admin/password/reset', 'Auth\AdminPasswordController@postReset');
+
 
 //Other Authentication routes....
 Route::get('other/login', ['middleware'=>'otherguest','uses'=> 'Auth\OtherAuthController@getLogin']);
@@ -63,11 +81,11 @@ Route::get('other/logout',['middleware'=>'ologout','uses'=>  'Auth\OtherAuthCont
 Route::get('other/register', ['middleware'=>'otherguest','uses'=> 'Auth\OtherAuthController@getRegister']);
 Route::post('other/register', 'Auth\OtherAuthController@postRegister');
 
+// Admin Password reset link request routes...
+Route::get('other/password/email', 'Auth\OtherPasswordController@getEmail');
+Route::post('other/password/email', 'Auth\OtherPasswordController@postEmail');
 
-// Password reset link request routes...
-Route::get('password/email', 'Auth\PasswordController@getEmail');
-Route::post('password/email', 'Auth\PasswordController@postEmail');
+// Admin Password reset routes...
+Route::get('other/password/reset/{type}/{token}', 'Auth\OtherPasswordController@getReset');
+Route::post('other/password/reset', 'Auth\OtherPasswordController@postReset');
 
-// Password reset routes...
-Route::get('password/reset/{type}/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');

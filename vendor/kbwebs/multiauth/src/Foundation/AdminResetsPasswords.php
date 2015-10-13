@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-trait UserResetsPasswords
+trait AdminResetsPasswords
 {
     /**
      * Display the form to request a password reset link.
@@ -17,7 +17,7 @@ trait UserResetsPasswords
      */
     public function getEmail()
     {
-        return view('auth.password');
+        return view('admin.password');
     }
 
     /**
@@ -30,7 +30,7 @@ trait UserResetsPasswords
     {
         $this->validate($request, ['email' => 'required|email']);
 
-        $response = Password::user()->sendResetLink($request->only('email'), function (Message $message) {
+        $response = Password::admin()->sendResetLink($request->only('email'), function (Message $message) {
             $message->subject($this->getEmailSubject());
         });
 
@@ -66,7 +66,7 @@ trait UserResetsPasswords
         }
 
 
-        return view('auth.reset')->with(['token' => $token, 'type' => $userType]);
+        return view('admin.reset')->with(['token' => $token, 'type' => $userType]);
     }
 
     /**
@@ -87,7 +87,7 @@ trait UserResetsPasswords
             'email', 'password', 'password_confirmation', 'token'
         );
 
-        $response = Password::user()->reset($credentials, function ($user, $password) {
+        $response = Password::admin()->reset($credentials, function ($user, $password) {
             $this->resetPassword($user, $password);
         });
 
@@ -115,7 +115,7 @@ trait UserResetsPasswords
 
         $user->save();
 
-        Auth::user()->login($user);
+        Auth::admin()->login($user);
     }
 
     /**
@@ -129,6 +129,6 @@ trait UserResetsPasswords
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : 'dashboard';
     }
 }

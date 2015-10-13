@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-<form role="form" method="POST" action="{{url('auth/password/email')}}">
+<form role="form" method="POST" action="{{url('other/password/email')}}">
     {!! csrf_field() !!}
 
     <div class="form-group">

@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 </head>
 <body>
-    <div class="container">
-<form role="form" method="POST" action="{{url('auth/password/email')}}">
-    {!! csrf_field() !!}
+<div class="container">
+    <form role="form" method="POST" action="{{url('admin/password/email')}}">
+        {!! csrf_field() !!}
 
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-    </div>
-    <button type="submit" class="btn btn-default">Send Password Reset Link</button>
-</form>
-</form>
-    </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+        </div>
+        <button type="submit" class="btn btn-default">Send Password Reset Link</button>
+    </form>
+    </form>
+</div>
 @if(count($errors) >0)
 
     <div class="container">

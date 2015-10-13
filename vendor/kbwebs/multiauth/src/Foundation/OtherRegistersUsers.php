@@ -35,7 +35,7 @@ trait OtherRegistersUsers
             );
         }
 
-        Auth::admin()->login($this->create($request->all()));
+        Auth::other()->login($this->create($request->all()));
 
         return redirect($this->redirectotherPath());
     }

@@ -60,20 +60,22 @@ return [
     'multi-auth' => [
     'admin' => [
         'driver' => 'eloquent',
-        'model'  => App\Admin::class
+        'model'  => App\Admin::class,
+        'email'  => 'emails.admins.password'
     ],
     'user' => [
         'driver' => 'eloquent',
-        'model'  => App\User::class
+        'model'  => App\User::class,
+        'email'  => 'emails.users.password'
     ],
      'other'=>[
          'driver' => 'eloquent',
-         'model'  => App\Other::class
+         'model'  => App\Other::class,
+         'email'  => 'emails.others.password'
      ]
     ],
 
     'password' => [
-        'email' => 'emails.users.password',
         'table' => 'password_resets',
         'expire' => 60,
     ],
