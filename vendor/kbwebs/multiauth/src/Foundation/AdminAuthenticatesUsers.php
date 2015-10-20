@@ -117,7 +117,7 @@ trait AdminAuthenticatesUsers
     {
         Auth::admin()->logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : 'dashboard');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : 'admins');
     }
 
     /**

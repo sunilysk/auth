@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-	
-</head>
-<body>
-	<div class="container">
-		
+@extends('partials.main')
+
+	@section('content')
+	<div class="panel panel-primary">
+  <div class="panel-heading">Users!! Login here</div>
+  <div class="panel-body">	
 	<form role="form" method="POST" action="{{url('auth/login')}}">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	  <div class="form-group">
@@ -22,28 +17,18 @@
 	  <div class="checkbox">
 	    <label><input type="checkbox"> Remember me</label>
 	  </div>
-	  <button type="submit" class="btn btn-default">Submit</button>
+	  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
+		
+	  	<a href="/auth/register" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Register as new User</a>
 	</form>
 
 	</div>
-	<br>
-	
-	@if(count($errors) >0)
-	
-	<div class="container">
-		<div class="alert alert-danger">
-			<ul>
-				@foreach($errors->all() as $error)
-					<li>{{$error}}</li>
-				@endforeach
-			</ul>
-
-		</div>
-
+	<div class="panel-footer"><a href="/auth/password/email" class="btn "><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Forgot Password!!</a>
+	</div>
 	</div>
 
-	@endif
+	<br>
+	
+@include('partials.errors')
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection

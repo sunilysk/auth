@@ -15,25 +15,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('userdashboard',['middleware'=>'auth',function(){
+    return view('userdashboard');
+}]);
+
+Route::get('users',function(){
+    return view('users');
+});
+
 Route::get('admins',function(){
    return view('admins');
 });
 
-Route::get('dashboard',function(){
-    return view('dashboard');
-});
+Route::get('admindashboard',['middleware'=>'aauth',function(){
+    return view('admindashboard');
+}]);
 
 Route::get('others',function(){
     return view('others');
 });
 
-Route::get('otherdashboard',function(){
+Route::get('otherdashboard',['middleware'=>'oauth',function(){
     return view('otherdashboard');
-});
-
-Route::get('users',['middleware'=>'auth',function(){
-    return view('users');
 }]);
+
 
 //User Authentication routes....
 

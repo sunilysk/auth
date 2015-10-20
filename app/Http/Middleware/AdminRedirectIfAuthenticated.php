@@ -44,7 +44,7 @@ class AdminRedirectIfAuthenticated
         }
 
         if (Auth::admin()->check()) {
-            return redirect('dashboard');
+            return redirect('admindashboard');
         }
 
         return $next($request);

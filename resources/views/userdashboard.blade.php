@@ -8,13 +8,13 @@
   	Auth</a></li>
 </ul>
 	
-	@if(\Auth::other()->check())
+	@if(\Auth::user()->check())
 <ul class="nav nav-pills pull-right">
   <li role="presentation" class="active"><a href="#"> 
   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-   {{\Auth::other()->get()->name}}</a></li>
+   {{\Auth::user()->get()->name}}</a></li>
   <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="/other/logout">Logout</a></li>
+  <li role="presentation"><a href="/auth/logout">Logout</a></li>
 </ul>
 	@else
 	<div class="container text-center">
@@ -26,7 +26,7 @@
 
 	<br><br><br><br>
 	
-	<h2>Hey Others this is your Dashboard</h2>
+	<h2>Hey Users this is your Dashboard</h2>
 
 
 @endsection

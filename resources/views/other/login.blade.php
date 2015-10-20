@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-	
-</head>
-<body>
-	<div class="container">
-		
+@extends('partials.main')
+
+	@section('content')
+		<div class="panel panel-danger">
+  <div class="panel-heading">Others!! Login here</div>
+  <div class="panel-body">
 	<form role="form" method="POST" action="{{url('other/login')}}">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	  <div class="form-group">
@@ -20,30 +15,18 @@
 	    <input type="password" class="form-control" name="password">
 	  </div>
 	  <div class="checkbox">
-	    <label><input type="checkbox"> Remember me</label>
+	    <label><input type="checkbox"> Remember me!</label>
 	  </div>
-	  <button type="submit" class="btn btn-default">Submit</button>
-	</form>
+	  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
+	  <a href="/other/register" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Register as new OtherGuy</a>
 
+	</form>
+		</div>
+			<div class="panel-footer"><a href="/other/password/email" class="btn "><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Forgot Password!!</a>
 	</div>
+		</div>
 	<br>
 	
-	@if(count($errors) >0)
-	
-	<div class="container">
-		<div class="alert alert-danger">
-			<ul>
-				@foreach($errors->all() as $error)
-					<li>{{$error}}</li>
-				@endforeach
-			</ul>
+@include('partials.errors')
 
-		</div>
-
-	</div>
-
-	@endif
-
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection

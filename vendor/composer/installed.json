@@ -3093,7 +3093,7 @@
                 "dev-master": "2.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "GuzzleHttp\\Stream\\": "src/"
@@ -3155,7 +3155,7 @@
                 "dev-master": "4.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "GuzzleHttp\\": "src/"

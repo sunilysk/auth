@@ -35,7 +35,15 @@ class OtherAuthenticate
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
+    {   
+        if(\Auth::admin()->check()){
+            return back();
+        }
+
+        if(\Auth::user()->check()){
+            return back();
+        }
+
         if (Auth::other()->guest()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);

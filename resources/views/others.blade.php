@@ -1,12 +1,12 @@
-<!doctype html>
-<html lang="en" class="">
-<head>
-    <meta charset="UTF-8">
-    <title>Others</title>
-</head>
-<body>
-        <h1>This is your entry point Others!!</h1>
-        <br>
+@extends('partials.main')
 
-</body>
-</html>
+@section('content')
+
+	<div class="container text-center">
+
+	<h1>GoodByeee Others@@</h1>
+		
+		<a href="/" class="btn btn-primary">Back to Home Sweet Home!!</a>
+
+	</div>	
+@endsection

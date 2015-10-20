@@ -1,10 +1,12 @@
-<!doctype html>
-<html lang="en" class="">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-            <h1>Now you are logged in as an Admin!!!</h1>
-</body>
-</html>
+@extends('partials.main')
+
+@section('content')
+
+	<div class="container text-center">
+
+	<h1>GoodByeee Admins@@</h1>
+		
+		<a href="/" class="btn btn-primary">Back to Home Sweet Home!!</a>
+
+	</div>	
+@endsection

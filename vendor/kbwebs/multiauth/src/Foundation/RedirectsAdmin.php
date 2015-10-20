@@ -15,6 +15,6 @@ trait RedirectsAdmin
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : 'admins';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : 'admindashboard';
     }
 }

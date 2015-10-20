@@ -44,7 +44,7 @@ class RedirectIfAuthenticated
         }
 
         if (Auth::user()->check()) {
-            return redirect('/');
+            return redirect('userdashboard');
         }
 
         return $next($request);

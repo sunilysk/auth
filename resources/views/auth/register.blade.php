@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-	
-</head>
-<body>
-		<div class="container">
+@extends('partials.main')
+
+    @section('content')
+    <div class="panel panel-primary">
+  <div class="panel-heading">Users!! Register here</div>
+  <div class="panel-body">
 		<form method="POST" action="{{url('auth/register')}}" >
     {!! csrf_field() !!}
 
@@ -32,20 +28,12 @@
     </div>
 	<br>
     <div>
-        <button type="submit" class="form-control btn btn-warning">Register</button>
+        <button type="submit" class="form-control btn btn-info">Register</button>
     </div>
 </form>
-	</div>
+    </div></div>
+    <br>
+    
+@include('partials.errors')
 
-        @if(count($errors)>0)
-        <div class="container">
-            <ul class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                 @endforeach
-            </ul>
-        </div>
-        @endif
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection

@@ -129,6 +129,6 @@ trait UserResetsPasswords
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : 'userdashboard';
     }
 }

@@ -129,6 +129,6 @@ trait AdminResetsPasswords
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : 'dashboard';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : 'admindashboard';
     }
 }

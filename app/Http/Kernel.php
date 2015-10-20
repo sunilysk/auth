@@ -36,6 +36,8 @@ class Kernel extends HttpKernel
         'ologout' => \App\Http\Middleware\otherlogout::class,
         'alogout' => \App\Http\Middleware\adminlogout::class,
         'ulogout' => \App\Http\Middleware\userlogout::class,
+        'aauth' => \App\Http\Middleware\AdminAuthenticate::class,
+        'oauth' => \App\Http\Middleware\OtherAuthenticate::class,
 
 
     ];

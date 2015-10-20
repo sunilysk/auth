@@ -1,13 +1,6 @@
-<!doctype html>
-<html lang="en" class="">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-</head>
-<body>
+@extends('partials.main')
 
-<div class="container">
+    @section('content')
 
     <form role="form" method="POST" action="{{url('other/password/reset')}}">
         {!! csrf_field() !!}
@@ -27,24 +20,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 
-</div>
-<br>
+    <br>
+    
+@include('partials.errors')
 
-@if(count($errors) >0)
-
-    <div class="container">
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-
-        </div>
-
-    </div>
-
-@endif
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection
