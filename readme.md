@@ -1,6 +1,27 @@
 #Example of Kbwebs multiauth
 
+To Get it Working follow the below steps!!!
 
-## Under Construction
+##### 1. Clone the Repository
+``` git clone https://github.com/sunilysk/auth.git ```
 
-###### You can clone it, if you want to experiment...
+##### 2. Install Dependencies
+
+``` composer install ```
+
+##### 3. Generate correct autoload files
+
+``` composer dump-autoload ```
+
+##### 4. Rename .env.example to .env and make changes to database and mandrill values( If u are using any other transcation mail provider then make changes to Config\mail.php) to make app run.
+
+##### 5. Migrate the tables
+
+``` php artisan migrate ```
+
+##### 5. Generate Application Key
+
+``` php artisan key:generate ```
+
+
+### Its done !!! Run the app with ``` php artisan serve ``` 
