@@ -13,7 +13,7 @@ To Get it Working follow the below steps!!!
 
 ``` composer dump-autoload ```
 
-##### 4. Rename .env.example to .env and make changes to database and mandrill values( If u are using any other transcation mail provider then make changes to Config\mail.php) to make app run.
+##### 4. Rename .env.example to .env and make changes to database and mandrill values( If u are using any other transcation mail provider then make changes to Config\mail.php as well) to make app run correctly.
 
 ##### 5. Migrate the tables
 
